@@ -2,11 +2,21 @@
 
 Status: **LIVE — deployed 2026-07-22**.
 
+> **Note (2026-08-18 security sweep):** this repo is a **public** fork. The Azure
+> subscription ID has been redacted from this doc since it's a direct resource
+> identifier with no operational need to be public — look it up in IT Glue instead.
+> The other identifiers below (resource group / storage / Key Vault / Function App
+> names, SWA URL) are kept since they're either already public-facing (the SWA/
+> Function App hostnames) or not independently actionable without the subscription
+> ID and an authenticated session. If this doc needs to carry more detail than
+> that going forward, consider moving it off the public branch entirely (e.g. IT
+> Glue or a private repo) rather than continuing to redact fields here.
+
 ## Topology
 
 | Piece | Value |
 |---|---|
-| Azure subscription | `16f1b04f-fafd-4923-8a1f-32d7a6879ea2` (platform sub, tenant Accelera IT) |
+| Azure subscription | `<REDACTED — see IT Glue: AIT - Accelera IT LLC>` (platform sub, tenant Accelera IT) |
 | Resource group | `rg-cipp-prod` |
 | Region | **Central US** (eastus2/eastus have zero consumption-plan quota on this sub; Central US validated clean and is SWA-native) |
 | Frontend | SWA `cipp-swa-46bjd` → https://gray-coast-06396e610.7.azurestaticapps.net ← deploys from `Accelera-Tech/CIPP` @ `main` via GitHub Actions |
