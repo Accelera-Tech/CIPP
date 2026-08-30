@@ -9,13 +9,19 @@ on:
     branches:
       - main
 
+# Least-privilege default: the deployment jobs only need to read repository
+# contents and post deployment comments on pull requests.
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: true
           lfs: false
